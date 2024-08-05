@@ -6,3 +6,4 @@ pytest.ini
 __pycache__
 db.sqlite3
 .coverage
+.vscode
