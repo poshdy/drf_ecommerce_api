@@ -13,13 +13,17 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = [
-    "rest_framework",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # External lib
+    "rest_framework",
+    "drf_spectacular",
+    # Internal modules
+    "drfecommerce.product",
 ]
 
 MIDDLEWARE = [
@@ -51,10 +55,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "drfecommerce.wsgi.application"
-
-
-# Password validation
-# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -93,3 +93,7 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+REST_FRAMEWORK = {"DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema"}
+
+SPECTACULAR_SETTING = {"TITLE": "Django DRF E-commerce"}
